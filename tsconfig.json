@@ -24,7 +24,7 @@
   },
   "include": [
     "src",
-    "globals.ts"
+    "globals.d.ts"
   ],
   "references": [
     {
