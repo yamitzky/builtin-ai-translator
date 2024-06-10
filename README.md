@@ -2,7 +2,13 @@
 
 ref https://developer.chrome.com/docs/ai/built-in
 
-Demo of Chrome's built-in AI.
+Demo site of Chrome's built-in AI, Gemini Nano.
+
+- Install Chrome 127 or later ([Chrome Canary](https://www.google.com/chrome/canary/))
+- Enable chrome://flags/#prompt-api-for-gemini-nano
+- Enable chrome://flags/#optimization-guide-on-device-model
+- Click Optimization Guide On Device Model in chrome://components/
+- Wait for the model to download
 
 ## Technologies Used
 
