@@ -10,6 +10,8 @@ Demo site of Chrome's built-in AI, Gemini Nano.
 - Click Optimization Guide On Device Model in chrome://components/
 - Wait for the model to download
 
+[Online Demo](https://builtin-ai-translator.yamitzky.dev/)
+
 ## Technologies Used
 
 - React
