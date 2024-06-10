@@ -19,37 +19,38 @@ function useCanUseAI() {
 }
 
 async function translateText(
-	deferredText: string,
+	text: string,
+	fromLang: string,
+	toLang: string,
+	useStream: false,
+): Promise<string>;
+async function translateText(
+	text: string,
+	fromLang: string,
+	toLang: string,
+	useStream: true,
+): Promise<AsyncIterable<string>>;
+async function translateText(
+	text: string,
 	fromLang: string,
 	toLang: string,
 	useStream: boolean,
-	onTranslated: (text: string) => void,
 ) {
-	if (deferredText) {
+	if (text) {
 		const session = await window.ai?.createTextSession();
 		if (session) {
 			let prompt = fromLang
 				? `Translate following text from ${fromLang} to ${toLang}.`
 				: `Translate following text to ${toLang}.`;
 
-			prompt += `\n${deferredText}`;
+			prompt += `\n${text}`;
 			console.info(prompt);
 			if (useStream) {
-				const stream = await session?.promptStreaming(prompt);
-				for await (const chunk of stream) {
-					if (chunk) {
-						onTranslated(chunk);
-					}
-				}
-			} else {
-				const result = await session?.prompt(prompt);
-				if (result) {
-					onTranslated(result);
-				}
+				return await session.promptStreaming(prompt);
 			}
-		} else {
-			throw new Error("Failed to create AI session");
+			return await session.prompt(prompt);
 		}
+		throw new Error("Failed to create AI session");
 	}
 }
 
@@ -78,13 +79,27 @@ export function useTranslation(
 			if (deferredText) {
 				setIsLoading(true);
 				try {
-					translateText(
-						deferredText,
-						fromLang,
-						toLang,
-						useStream,
-						setTranslatedText,
-					);
+					if (useStream) {
+						const stream = await translateText(
+							deferredText,
+							fromLang,
+							toLang,
+							useStream,
+						);
+						for await (const chunk of stream) {
+							setTranslatedText(chunk);
+						}
+						setIsLoading(false);
+					} else {
+						const result = await translateText(
+							deferredText,
+							fromLang,
+							toLang,
+							useStream,
+						);
+						setTranslatedText(result);
+						setIsLoading(false);
+					}
 				} catch (e: unknown) {
 					if (e instanceof Error) {
 						setError(e.message);
