@@ -4,7 +4,7 @@ export const Footer = () => {
 	return (
 		<footer className="text-center">
 			<div>
-				<Link href="https://github.com/yamitzky/built-in-ai-translator">
+				<Link href="https://github.com/yamitzky/builtin-ai-translator">
 					View on GitHub
 				</Link>
 			</div>
