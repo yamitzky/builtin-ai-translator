@@ -1,6 +1,5 @@
 {
-  "name": "edge-llm-translator",
-  "private": true,
+  "name": "builtin-ai-translator",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
