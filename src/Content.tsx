@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Checkbox } from "./Checkbox";
+import { Link } from "./Link";
 import { Loading } from "./Loading";
 import { Select } from "./Select";
 import { LANGUAGES } from "./constants";
@@ -47,12 +48,9 @@ export const Content = () => {
 							<ul className="text-gray-500 ml-2 list-disc list-inside">
 								<li>
 									Install Chrome 127 or later (
-									<a
-										href="https://www.google.com/chrome/canary/"
-										className="text-blue-500"
-									>
+									<Link href="https://www.google.com/chrome/canary/">
 										Chrome Canary
-									</a>
+									</Link>
 									)
 								</li>
 								<li>Enable chrome://flags/#prompt-api-for-gemini-nano</li>

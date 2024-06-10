@@ -1,13 +1,15 @@
+import { Link } from "./Link";
+
 export const Footer = () => {
 	return (
 		<footer className="text-center">
 			<div>
-				<a href="https://github.com/yamitzky/built-in-ai-translator">
+				<Link href="https://github.com/yamitzky/built-in-ai-translator">
 					View on GitHub
-				</a>
+				</Link>
 			</div>
 			<div>
-				Built by <a href="https://twitter.com/yamitzky">@yamitzky</a>
+				Built by <Link href="https://twitter.com/yamitzky">@yamitzky</Link>
 			</div>
 		</footer>
 	);
