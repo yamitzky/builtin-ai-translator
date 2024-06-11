@@ -102,7 +102,6 @@ export function useTranslation(
 					}
 				} catch (e: unknown) {
 					if (e instanceof Error) {
-						setError(e.message);
 						console.error(e);
 					}
 				} finally {
