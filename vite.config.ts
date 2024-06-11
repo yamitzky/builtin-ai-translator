@@ -8,17 +8,13 @@ export default defineConfig({
 		react(),
 		VitePWA({
 			registerType: "autoUpdate",
-			injectRegister: "auto",
-			workbox: {
-				globPatterns: ["**/*.{js,css,html}"],
-			},
 			manifest: {
 				name: "Built-in AI Translator",
 				short_name: "Built-in AI Translator",
 				description: "AI Translator using Gemini Nano",
 				theme_color: "#0E324E",
 				background_color: "#fff",
-				display: "standalone",
+				display: "browser",
 				icons: [
 					{
 						src: "/icon-192x192.png",
