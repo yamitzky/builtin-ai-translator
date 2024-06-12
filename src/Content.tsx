@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Checkbox } from "./Checkbox";
-import { Link } from "./Link";
-import { Loading } from "./Loading";
-import { Select } from "./Select";
+import { Checkbox } from "./components/Checkbox";
+import { Link } from "./components/Link";
+import { Loading } from "./components/Loading";
+import { Select } from "./components/Select";
 import { LANGUAGES } from "./constants";
-import { useTranslation } from "./hooks";
+import { useTranslation } from "./hooks/translation";
 
 export const Content = () => {
 	const [text, setText] = useState("");
