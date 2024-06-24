@@ -18,6 +18,7 @@ Demo site of Chrome's built-in AI, Gemini Nano.
 - TypeScript
 - Vite
 - Tailwind
+- Progressive Web Apps (Offline support)
 - Chrome's built-in LLM (for translation)
 
 ## Getting Started
