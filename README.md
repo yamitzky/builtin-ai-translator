@@ -25,13 +25,13 @@ Demo site of Chrome's built-in AI, Gemini Nano.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yamitzky/ai-translator.git
+   git clone git@github.com:yamitzky/builtin-ai-translator.git
    ```
 
 2. Install dependencies:
 
    ```bash
-   cd ai-translator
+   cd builtin-ai-translator
    bun install
    ```
 
